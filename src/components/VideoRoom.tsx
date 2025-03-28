@@ -4,7 +4,7 @@ import { Users, Copy, CheckCircle, Link } from "lucide-react";
 import { Badge } from "./lib/ui/badge";
 import { toast } from "sonner";
 import { Input } from "./lib/ui/input";
-import { Button } from "./ui/button";
+import { Button } from "./lib/ui/button";
 
 interface VideoRoomProps {
   roomId: string;

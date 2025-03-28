@@ -24,9 +24,11 @@
     "noUncheckedSideEffectImports": true,
 
     /* Add these lines for import alias */
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
   "include": ["src", "src/vite-env.d.ts"]
