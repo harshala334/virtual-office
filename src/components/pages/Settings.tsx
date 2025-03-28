@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from
-"@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { Switch } from "@/components/ui/switch";
+"../lib/ui/card";
+import { Label } from "../lib/ui/label";
+import { Switch } from "../lib/ui/switch";
 import { useTheme } from "@/components/ThemeProvider";
 import { toast } from "sonner";
 const Settings = () => {
