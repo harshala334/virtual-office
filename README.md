@@ -13,8 +13,8 @@ This is a **React + Vite** project with **TypeScript** and **ShadCN UI component
 
 ### **1️⃣ Clone the Repository**  
 ```sh
-git clone <your-repo-url>
-cd <your-repo-name>
+git clone https://github.com/harshala334/virtual-office.git
+cd virtual-office
 ```
 ### **2️⃣ Install Dependencies** 
 ```sh
