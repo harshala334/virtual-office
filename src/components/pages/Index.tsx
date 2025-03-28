@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Button } from "../lib/ui/button";
+import { Button } from "../ui/button";
 //import { RoomCard } from "@/components/RoomCard";
 import { VideoRoom } from "@/components/VideoRoom";
 import { Plus} from "lucide-react";

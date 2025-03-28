@@ -3,7 +3,7 @@ import { Home, Settings, Menu, User } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "../components/lib/ui/sheet";
 import { cn } from "./lib/utils";
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "./lib/ui/button";
+import { Button } from "./ui/button";
 
 const MainNav = () => {
   const location = useLocation();

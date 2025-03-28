@@ -10,7 +10,6 @@ import NotFound from "../src/components/pages/NotFound";
 import MainNav from "./components/MainNav";
 import { cn } from "../src/components/lib/utils";
 import { ThemeProvider } from "./components/ThemeProvider";
-
 const queryClient = new QueryClient();
 
 const App = () => (
