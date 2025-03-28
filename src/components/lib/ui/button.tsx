@@ -16,7 +16,6 @@ outline:
 "border border-input bg-background hover:bg-accent hover:textaccent-foreground",
 secondary:
 "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-VIRTUAL OFFICE MEET 14
 ghost: "hover:bg-accent hover:text-accent-foreground",
 link: "text-primary underline-offset-4 hover:underline",
 },

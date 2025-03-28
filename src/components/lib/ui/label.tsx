@@ -14,7 +14,6 @@ React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &
 VariantProps<typeof labelVariants>
 >(({ className, ...props }, ref) => (
 
-VIRTUAL OFFICE MEET 59
 
 <LabelPrimitive.Root
 ref={ref}

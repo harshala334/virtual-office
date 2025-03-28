@@ -16,7 +16,6 @@ return (
 <Card className="w-full max-w-sm transition-all duration-300 hover:shadow-
 lg animate-fade-up glass-effect bg-gray-800/40">
 
-VIRTUAL OFFICE MEET 74
 
 <CardHeader>
 <div className="flex items-center justify-between">
@@ -81,7 +80,6 @@ rounded-md bg-gray-700/40">
 <Calendar className="h-4 w-4 mb-1 text-blue-400" />
 <span className="text-xs">Available now</span>
 
-VIRTUAL OFFICE MEET 75
 
 </div>
 </div>

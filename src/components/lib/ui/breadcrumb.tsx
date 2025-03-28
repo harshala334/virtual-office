@@ -40,7 +40,6 @@ React.ComponentPropsWithoutRef<"a"> & {
 asChild?: boolean
 }
 >(({ asChild, className, ...props }, ref) => {
-VIRTUAL OFFICE MEET 12
 const Comp = asChild ? Slot : "a"
 return (
 <Comp
@@ -85,7 +84,6 @@ className,
 ...props
 }: React.ComponentProps<"span">) => (
 <span
-VIRTUAL OFFICE MEET 13
 role="presentation"
 aria-hidden="true"
 className={cn("flex h-9 w-9 items-center justify-center", className)}

@@ -10,7 +10,6 @@ icon?: React.ComponentType
 } & (
 | { color?: string; theme?: never }
 | { color?: never; theme: Record<keyof typeof THEMES, string> }
-VIRTUAL OFFICE MEET 24
 )
 }
 type ChartContextProps = {
@@ -45,7 +44,6 @@ className={cn(
 [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border [&_.rechartssector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-none
 [&_.recharts-surface]:outline-none",
 className
-VIRTUAL OFFICE MEET 25
 )}
 {...props}
 >
@@ -89,7 +87,6 @@ return color ? ` --color-${key}: ${color};` : null
 )
 }
 const ChartTooltip = RechartsPrimitive.Tooltip
-VIRTUAL OFFICE MEET 26
 const ChartTooltipContent = React.forwardRef<
 HTMLDivElement,
 React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
@@ -135,7 +132,6 @@ if (labelFormatter) {
 return (
 <div className={cn("font-medium", labelClassName)}>
 {labelFormatter(value, payload)}
-VIRTUAL OFFICE MEET 27
 </div>
 )
 }
@@ -177,7 +173,6 @@ className={cn(
 "flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5
 [&>svg]:w-2.5 [&>svg]:text-muted-foreground",
 indicator === "dot" && "items-center"
-VIRTUAL OFFICE MEET 28
 )}
 >
 {formatter && item?.value !== undefined && item.name ? (
@@ -225,7 +220,6 @@ nestLabel ? "items-end" : "items-center"
 <span className="font-mono font-medium tabular-nums
 text-foreground">
 {item.value.toLocaleString()}
-VIRTUAL OFFICE MEET 29
 </span>
 )}
 </div>
@@ -270,7 +264,6 @@ className
 {payload.map((item) => {
 const key = `${nameKey || item.dataKey || "value"}`
 const itemConfig = getPayloadConfigFromPayload(config, item, key)
-VIRTUAL OFFICE MEET 30
 return (
 <div
 key={item.value}
@@ -314,7 +307,6 @@ payload.payload !== null
 ? payload.payload
 : undefined
 let configLabelKey: string = key
-VIRTUAL OFFICE MEET 31
 if (
 key in payload &&
 typeof payload[key as keyof typeof payload] === "string"

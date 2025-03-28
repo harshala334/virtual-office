@@ -29,7 +29,6 @@ const context = React.useContext(CarouselContext)
 if (!context) {
 throw new Error("useCarousel must be used within a <Carousel />")
 }
-VIRTUAL OFFICE MEET 19
 return context
 }
 const Carousel = React.forwardRef<
@@ -72,7 +71,6 @@ api?.scrollNext()
 }, [api])
 const handleKeyDown = React.useCallback(
 (event: React.KeyboardEvent<HTMLDivElement>) => {
-VIRTUAL OFFICE MEET 20
 if (event.key === "ArrowLeft") {
 event.preventDefault()
 scrollPrev()
@@ -115,7 +113,6 @@ canScrollNext,
 }}
 >
 <div
-VIRTUAL OFFICE MEET 21
 ref={ref}
 onKeyDownCapture={handleKeyDown}
 className={cn("relative", className)}
@@ -160,7 +157,6 @@ return (
 ref={ref}
 role="group"
 aria-roledescription="slide"
-VIRTUAL OFFICE MEET 22
 className={cn(
 "min-w-0 shrink-0 grow-0 basis-full",
 orientation === "horizontal" ? "pl-4" : "pt-4",
@@ -205,7 +201,6 @@ React.ComponentProps<typeof Button>
 const { orientation, scrollNext, canScrollNext } = useCarousel()
 return (
 <Button
-VIRTUAL OFFICE MEET 23
 ref={ref}
 variant={variant}
 size={size}

@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-VIRTUAL OFFICE MEET 76
 
 type Theme = "dark" | "light" | "system";
 type ThemeProviderProps = {
@@ -41,7 +40,6 @@ root.classList.add(theme);
 }, [theme]);
 const value = {
 
-VIRTUAL OFFICE MEET 77
 
 theme,
 setTheme: (theme: Theme) => {

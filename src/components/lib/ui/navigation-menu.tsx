@@ -10,7 +10,6 @@ React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root>
 <NavigationMenuPrimitive.Root
 ref={ref}
 
-VIRTUAL OFFICE MEET 65
 
 className={cn(
 "relative z-10 flex max-w-max flex-1 items-center justify-center",
@@ -59,7 +58,6 @@ className={cn(navigationMenuTriggerStyle(), "group", className)}
 {children}{" "}
 <ChevronDown
 
-VIRTUAL OFFICE MEET 66
 
 className="relative top-[1px] ml-1 h-3 w-3 transition duration-200
 group-data-[state=open]:rotate-180"
@@ -111,7 +109,6 @@ ref={ref}
 {...props}
 />
 
-VIRTUAL OFFICE MEET 67
 
 </div>
 ))

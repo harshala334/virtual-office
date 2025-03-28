@@ -40,5 +40,4 @@ className
 />
 ))
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
-VIRTUAL OFFICE MEET 10
 export { Avatar, AvatarImage, AvatarFallback }

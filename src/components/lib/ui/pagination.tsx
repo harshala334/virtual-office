@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils"
 import { ButtonProps, buttonVariants } from "@/components/ui/button"
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
 
-VIRTUAL OFFICE MEET 68
 
 <nav
 role="navigation"
@@ -51,7 +50,6 @@ size,
 }),
 className
 
-VIRTUAL OFFICE MEET 69
 
 )}
 {...props}
@@ -99,7 +97,6 @@ className={cn("flex h-9 w-9 items-center justify-center", className)}
 >
 <MoreHorizontal className="h-4 w-4" />
 
-VIRTUAL OFFICE MEET 70
 
 <span className="sr-only">More pages</span>
 </span>

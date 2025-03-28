@@ -22,7 +22,6 @@ React.HTMLAttributes<HTMLDivElement>
 ref={ref}
 className={cn("flex flex-col space-y-1.5 p-6", className)}
 {...props}
-VIRTUAL OFFICE MEET 17
 />
 ))
 CardHeader.displayName = "CardHeader"
@@ -67,7 +66,6 @@ ref={ref}
 className={cn("flex items-center p-6 pt-0", className)}
 {...props}
 />
-VIRTUAL OFFICE MEET 18
 ))
 CardFooter.displayName = "CardFooter"
 export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent

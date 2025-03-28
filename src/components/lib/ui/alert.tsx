@@ -18,7 +18,6 @@ variant: "default",
 }
 )
 const Alert = React.forwardRef<
-VIRTUAL OFFICE MEET 8
 HTMLDivElement,
 React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
 >(({ className, variant, ...props }, ref) => (

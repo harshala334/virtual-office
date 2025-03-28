@@ -11,7 +11,6 @@ React.ComponentPropsWithoutRef<typeof CommandPrimitive>
 <CommandPrimitive
 ref={ref}
 className={cn(
-VIRTUAL OFFICE MEET 33
 "flex h-full w-full flex-col overflow-hidden rounded-md bg-popover textpopover-foreground",
 className
 )}
@@ -51,7 +50,6 @@ className
 </div>
 ))
 CommandInput.displayName = CommandPrimitive.Input.displayName
-VIRTUAL OFFICE MEET 34
 const CommandList = React.forwardRef<
 React.ElementRef<typeof CommandPrimitive.List>,
 React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>
@@ -92,7 +90,6 @@ className
 CommandGroup.displayName = CommandPrimitive.Group.displayName
 const CommandSeparator = React.forwardRef<
 React.ElementRef<typeof CommandPrimitive.Separator>,
-VIRTUAL OFFICE MEET 35
 React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>
 >(({ className, ...props }, ref) => (
 <CommandPrimitive.Separator
@@ -137,7 +134,6 @@ CommandShortcut.displayName = "CommandShortcut"
 export {
 Command,
 CommandDialog,
-VIRTUAL OFFICE MEET 36
 CommandInput,
 CommandList,
 CommandEmpty,

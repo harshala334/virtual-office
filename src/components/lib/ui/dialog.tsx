@@ -6,7 +6,6 @@ const Dialog = DialogPrimitive.Root
 const DialogTrigger = DialogPrimitive.Trigger
 const DialogPortal = DialogPrimitive.Portal
 const DialogClose = DialogPrimitive.Close
-VIRTUAL OFFICE MEET 42
 const DialogOverlay = React.forwardRef<
 React.ElementRef<typeof DialogPrimitive.Overlay>,
 React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
@@ -52,7 +51,6 @@ disabled:pointer-events-none data-[state=open]:bg-accent data-
 <X className="h-4 w-4" />
 <span className="sr-only">Close</span>
 </DialogPrimitive.Close>
-VIRTUAL OFFICE MEET 43
 </DialogPrimitive.Content>
 </DialogPortal>
 ))
@@ -97,7 +95,6 @@ className
 />
 ))
 DialogTitle.displayName = DialogPrimitive.Title.displayName
-VIRTUAL OFFICE MEET 44
 const DialogDescription = React.forwardRef<
 React.ElementRef<typeof DialogPrimitive.Description>,
 React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>

@@ -12,7 +12,6 @@ ref={ref}
 align={align}
 sideOffset={sideOffset}
 className={cn(
-VIRTUAL OFFICE MEET 56
 "z-50 w-64 rounded-md border bg-popover p-4 text-popover-foreground
 shadow-md outline-none data-[state=open]:animate-in data-
 [state=closed]:animate-out data-[state=closed]:fade-out-0 data-

@@ -10,7 +10,6 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import type { ConferenceRoom } from "@/types/room";
 
-VIRTUAL OFFICE MEET 89
 
 const Index = () => {
 // Load rooms from localStorage if available
@@ -58,7 +57,6 @@ participants: 5 },
 participants: 12 },
 ];
 
-VIRTUAL OFFICE MEET 90
 
 // Check URL for room invitation link parameters
 useEffect(() => {
@@ -107,7 +105,6 @@ meetingId: `meet-${Date.now()}`,
 participants: [],
 };
 
-VIRTUAL OFFICE MEET 91
 
 setRooms([...rooms, newRoom]);
 setNewRoomName("");
@@ -153,7 +150,6 @@ const parts = joinWithCode.split('-');
 if (parts.length >= 2 && parts[0] === "VO") {
 const roomId = parts[1];
 
-VIRTUAL OFFICE MEET 92
 
 const room = rooms.find(r => r.id === roomId);
 if (room) {
@@ -206,7 +202,6 @@ Join with Code
 <div>
 <Label htmlFor="meeting-code">Meeting Code</Label>
 
-VIRTUAL OFFICE MEET 93
 
 <Input
 id="meeting-code"
@@ -257,7 +252,6 @@ placeholder="Enter room capacity"
 
 (optional)</Label>
 
-VIRTUAL OFFICE MEET 94
 
 <Input
 id="description"
@@ -311,7 +305,6 @@ muted-foreground">
 <div className="flex items-center gap-1">
 <Users className="h-4 w-4" />
 
-VIRTUAL OFFICE MEET 95
 
 <span>{meeting.participants} participants</span>
 </div>

@@ -10,7 +10,6 @@ React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
 ref={ref}
 className={cn(
 "peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offsetbackground focus-visible:outline-none focus-visible:ring-2 focus-visible:ringring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-
-VIRTUAL OFFICE MEET 32
 50 data-[state=checked]:bg-primary data-[state=checked]:text-primaryforeground",
 className
 )}

@@ -13,7 +13,6 @@ shouldScaleBackground={shouldScaleBackground}
 Drawer.displayName = "Drawer"
 const DrawerTrigger = DrawerPrimitive.Trigger
 const DrawerPortal = DrawerPrimitive.Portal
-VIRTUAL OFFICE MEET 45
 const DrawerClose = DrawerPrimitive.Close
 const DrawerOverlay = React.forwardRef<
 React.ElementRef<typeof DrawerPrimitive.Overlay>,
@@ -58,7 +57,6 @@ className={cn("grid gap-1.5 p-4 text-center sm:text-left", className)}
 )
 DrawerHeader.displayName = "DrawerHeader"
 const DrawerFooter = ({
-VIRTUAL OFFICE MEET 46
 className,
 ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
@@ -104,5 +102,4 @@ DrawerHeader,
 DrawerFooter,
 DrawerTitle,
 DrawerDescription,
-VIRTUAL OFFICE MEET 47
 }

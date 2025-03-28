@@ -31,7 +31,6 @@ if (!editableInfo.name.trim()) {
 toast.error("Name cannot be empty");
 return;
 
-VIRTUAL OFFICE MEET 86
 
 }
 if (!editableInfo.email.trim() || !editableInfo.email.includes('@')) {
@@ -77,7 +76,6 @@ onChange={handleChange}
 />
 </div>
 
-VIRTUAL OFFICE MEET 87
 
 </div>
 <div className="space-y-2">
@@ -128,7 +126,6 @@ onChange={handleChange}
 <p className="font-medium">{userInfo.phone}</p>
 <p className="text-sm text-muted-foreground">Phone</p>
 
-VIRTUAL OFFICE MEET 88
 
 </div>
 </div>

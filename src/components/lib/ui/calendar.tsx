@@ -3,7 +3,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { DayPicker } from "react-day-picker";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-VIRTUAL OFFICE MEET 15
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 function Calendar({
 className,
@@ -43,7 +42,6 @@ day_selected:
 day_today: "bg-accent text-accent-foreground",
 day_outside:
 "day-outside text-muted-foreground opacity-50 aria-selected:bgaccent/50 aria-selected:text-muted-foreground aria-selected:opacity-30",
-VIRTUAL OFFICE MEET 16
 day_disabled: "text-muted-foreground opacity-50",
 day_range_middle:
 "aria-selected:bg-accent aria-selected:text-accent-foreground",

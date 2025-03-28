@@ -24,7 +24,6 @@ React.ComponentPropsWithoutRef<"div">
 <div ref={ref} className={cn("flex items-center", className)} {...props} />
 ))
 InputOTPGroup.displayName = "InputOTPGroup"
-VIRTUAL OFFICE MEET 57
 const InputOTPSlot = React.forwardRef<
 React.ElementRef<"div">,
 React.ComponentPropsWithoutRef<"div"> & { index: number }

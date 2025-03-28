@@ -27,7 +27,6 @@ className
 {...props}
 />
 
-VIRTUAL OFFICE MEET 71
 
 </PopoverPrimitive.Portal>
 ))
