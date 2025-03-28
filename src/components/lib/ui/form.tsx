@@ -10,7 +10,7 @@ FormProvider,
 useFormContext,
 } from "react-hook-form"
 import { cn } from "@/lib/utils"
-import { Label } from "@/components/ui/label"
+import { Label } from "@/components/lib/ui/label"
 const Form = FormProvider
 type FormFieldContextValue<
 TFieldValues extends FieldValues = FieldValues,

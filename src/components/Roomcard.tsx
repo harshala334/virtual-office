@@ -1,5 +1,5 @@
 import { Button } from "./lib/ui/button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/lib/ui/card";
 
 import { Users, Video, Calendar, Clock, Star, Check } from "lucide-react";
 import { useState } from "react";
