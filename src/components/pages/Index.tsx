@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import { Button } from "../../components/ui/button";
-//import { RoomCard } from "@/components/RoomCard";
 import { VideoRoom } from "@/components/VideoRoom";
-import { Plus} from "lucide-react";
+import { Plus } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "../lib/ui/dialog";
 import { Input } from "../lib/ui/input";
-
 import { toast } from "sonner";
 import type { ConferenceRoom } from "../types/room";
 import { Label } from "../lib/ui/label";
@@ -15,28 +13,7 @@ const Index = () => {
   const loadRooms = (): ConferenceRoom[] => {
     const savedRooms = localStorage.getItem("conferenceRooms");
     if (savedRooms) return JSON.parse(savedRooms);
-
-    // Default rooms if none exist in localStorage
-    return [
-      {
-        id: "1",
-        name: "Main Conference Room",
-        capacity: 20,
-        description: "Main meeting space for company-wide meetings",
-        isOccupied: false,
-        meetingId: "meet-123",
-        participants: [],
-      },
-      {
-        id: "2",
-        name: "Team Huddle Room",
-        capacity: 8,
-        description: "Perfect for small team discussions",
-        isOccupied: true,
-        meetingId: "meet-456",
-        participants: ["user1", "user2"],
-      },
-    ];
+    return [];
   };
 
   const [rooms, setRooms] = useState<ConferenceRoom[]>(loadRooms);
@@ -47,14 +24,6 @@ const Index = () => {
   const [joinWithCode, setJoinWithCode] = useState("");
   const [isJoinDialogOpen, setIsJoinDialogOpen] = useState(false);
 
-  // Upcoming meetings data
-//   const upcomingMeetings = [
-//     { id: "1", title: "Weekly Team Sync", time: "Today, 3:00 PM", participants: 8 },
-//     { id: "2", title: "Project Alpha Review", time: "Tomorrow, 10:00 AM", participants: 5 },
-//     { id: "3", title: "Quarterly Planning", time: "Friday, 2:00 PM", participants: 12 },
-//   ];
-
-  // Check URL for room invitation link parameters
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const roomId = params.get("roomId");
@@ -66,7 +35,6 @@ const Index = () => {
         if (room) {
           toast.success(`Joining meeting room: ${room.name}`);
           setActiveRoom(roomId);
-          // Clean up URL after joining
           window.history.replaceState({}, document.title, window.location.pathname);
         } else {
           toast.error("Invalid meeting room. The room may have been deleted.");
@@ -226,6 +194,25 @@ const Index = () => {
               </DialogContent>
             </Dialog>
           </div>
+        </div>
+
+        {/* Display Available Rooms */}
+        <div className="mt-8 p-4 bg-gray-800/70 rounded-lg">
+          <h3 className="text-lg font-bold text-white mb-2">Available Rooms:</h3>
+          {rooms.length === 0 ? (
+            <p className="text-gray-400">No active rooms available.</p>
+          ) : (
+            <ul className="space-y-2">
+              {rooms.map((room) => (
+                <li key={room.id} className="flex justify-between items-center p-4 bg-gray-700 rounded-md">
+                  <h4 className="text-white text-lg font-semibold">{room.name}</h4>
+                  <Button onClick={() => handleJoinRoom(room.id)} disabled={room.isOccupied}>
+                    {room.isOccupied ? "Room Full" : "Join"}
+                  </Button>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </div>

@@ -11,21 +11,20 @@ interface VideoRoomProps {
   onLeave: () => void;
 }
 
-export const VideoRoom = ({ roomId }: VideoRoomProps) => {
+export const VideoRoom = ({ roomId, onLeave }: VideoRoomProps) => {
   const [isMuted, setIsMuted] = useState(false);
   const [isVideoOn, setIsVideoOn] = useState(true);
   const [isCopied, setIsCopied] = useState(false);
   const [isLinkCopied, setIsLinkCopied] = useState(false);
   const [isScreenSharing, setIsScreenSharing] = useState(false);
   const [participants, setParticipants] = useState<string[]>(["You"]);
+  const [activeRooms, setActiveRooms] = useState<string[]>([]);
 
   const localVideoRef = useRef<HTMLVideoElement>(null);
   const screenShareRef = useRef<HTMLVideoElement>(null);
-  const remoteVideoRef = useRef<HTMLVideoElement>(null);
 
   const meetingCode = `VO-${roomId}-${roomId.split('').reduce((a, b) => a + b.charCodeAt(0), 0)}`;
   const meetingLink = `${window.location.origin}/?roomId=${roomId}&code=${meetingCode}`;
-  //const cssVideoIds = ["1PnVor36_40", "yfoY53QXEnI"];
 
   useEffect(() => {
     const startVideo = async () => {
@@ -36,31 +35,43 @@ export const VideoRoom = ({ roomId }: VideoRoomProps) => {
       } catch (err) {
         console.error("Error accessing media devices:", err);
         toast.error("Could not access camera or microphone");
-        if (localVideoRef.current) localVideoRef.current.classList.add("camera-unavailable");
       }
     };
 
     startVideo();
 
     const timer = setTimeout(() => {
-      setParticipants((prev) => [...prev, "Pratima", "Pratima@gmail.com"]);
-      toast.success("New participants have joined the meeting");
+      const newParticipants = [...participants, "Pratima", "Pratima@gmail.com"];
+      setParticipants(newParticipants);
 
-      if (remoteVideoRef.current) {
-        navigator.mediaDevices.getUserMedia({ video: true, audio: false }).then((stream) => {
-          if (remoteVideoRef.current) remoteVideoRef.current.srcObject = stream;
-        }).catch((error) => console.error("Could not simulate remote video", error));
+      // Save in localStorage
+      localStorage.setItem(`meeting-${roomId}`, JSON.stringify(newParticipants));
+
+      // Save room in active rooms list
+      const storedRooms = JSON.parse(localStorage.getItem("activeRooms") || "[]");
+      if (!storedRooms.includes(roomId)) {
+        storedRooms.push(roomId);
+        localStorage.setItem("activeRooms", JSON.stringify(storedRooms));
       }
+
+      setActiveRooms(storedRooms);
+      toast.success("New participants have joined the meeting");
     }, 3000);
 
     return () => {
-      [localVideoRef, screenShareRef, remoteVideoRef].forEach((ref) => {
-        const stream = ref.current?.srcObject as MediaStream;
-        stream?.getTracks().forEach((track) => track.stop());
-      });
       clearTimeout(timer);
     };
   }, []);
+
+  useEffect(() => {
+    const storedRooms = JSON.parse(localStorage.getItem("activeRooms") || "[]");
+    setActiveRooms(storedRooms);
+  }, []);
+
+  const handleLeaveMeeting = () => {
+    localStorage.removeItem(`meeting-${roomId}`);
+    onLeave();
+  };
 
   const toggleMute = () => {
     const stream = localVideoRef.current?.srcObject as MediaStream;
@@ -114,47 +125,38 @@ export const VideoRoom = ({ roomId }: VideoRoomProps) => {
   return (
     <div className="min-h-screen p-6 bg-gradient-to-br from-gray-900 to-gray-800">
       <Card className="mx-auto max-w-7xl glass-effect bg-gray-900/70 p-6">
-        {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-2xl font-bold">Meeting Room: {roomId}</h2>
             <div className="flex items-center gap-2 mt-2">
               <Users className="h-4 w-4" />
-              <span className="text-sm text-muted-foreground">{participants.length} participants</span>
+              <span className="text-sm text-muted-foreground">
+                {participants.length} participants
+              </span>
             </div>
+            <ul>
+              {participants.map((user, index) => (
+                <li key={index} className="text-white">{user}</li>
+              ))}
+            </ul>
           </div>
           <Badge variant="secondary" className="text-sm">Meeting in Progress</Badge>
         </div>
 
-        {/* Share Meeting Code */}
+        {/* Share Meeting Details */}
         <div className="mb-6 space-y-4">
           <div className="p-4 bg-gray-800/60 rounded-lg">
             <div className="flex items-center gap-3">
-              <div className="text-sm font-medium">Share this meeting code:</div>
-              <div className="relative flex-1 max-w-xs">
-                <Input value={meetingCode} readOnly className="pr-10 bg-gray-700" />
-                <Button size="icon" variant="ghost" className="absolute right-0 top-0 h-full" onClick={copyMeetingCode}>
-                  {isCopied ? <CheckCircle className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          {/* Share Meeting Link */}
-          <div className="p-4 bg-gray-800/60 rounded-lg">
-            <div className="flex items-center gap-3">
-              <div className="text-sm font-medium">Share this meeting link:</div>
-              <div className="relative flex-1">
-                <Input value={meetingLink} readOnly className="pr-10 bg-gray-700 text-xs sm:text-sm" />
-                <Button size="icon" variant="ghost" className="absolute right-0 top-0 h-full" onClick={copyMeetingLink}>
-                  {isLinkCopied ? <CheckCircle className="h-4 w-4 text-green-500" /> : <Link className="h-4 w-4" />}
-                </Button>
-              </div>
+              <div className="text-sm font-medium">Meeting Code:</div>
+              <Input value={meetingCode} readOnly className="pr-10 bg-gray-700" />
+              <Button size="icon" variant="ghost" onClick={copyMeetingCode}>
+                {isCopied ? <CheckCircle className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+              </Button>
             </div>
           </div>
         </div>
 
-        {/* Video Grid */}
+        {/* Video */}
         <div className="video-grid mb-6">
           <video ref={localVideoRef} autoPlay playsInline muted className="w-full h-full object-cover rounded-lg" />
         </div>
@@ -164,6 +166,16 @@ export const VideoRoom = ({ roomId }: VideoRoomProps) => {
           <Button onClick={toggleMute}>{isMuted ? "Unmute" : "Mute"}</Button>
           <Button onClick={toggleVideo}>{isVideoOn ? "Turn Off Video" : "Turn On Video"}</Button>
           <Button onClick={toggleScreenShare}>{isScreenSharing ? "Stop Sharing" : "Share Screen"}</Button>
+        </div>
+
+        {/* Active Rooms Section */}
+        <div className="mt-8">
+          <h3 className="text-lg font-bold">Active Rooms:</h3>
+          <ul>
+            {activeRooms.map((room) => (
+              <li key={room} className="text-white">{room}</li>
+            ))}
+          </ul>
         </div>
       </Card>
     </div>
