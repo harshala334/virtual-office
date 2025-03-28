@@ -1,7 +1,7 @@
 import { Home, Settings, Menu, User } from "lucide-react";
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { cn } from "@/lib/utils";
+import { Sheet, SheetContent, SheetTrigger } from "../components/lib/ui/sheet";
+import { cn } from "./lib/utils";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "./lib/ui/button";
 
@@ -35,7 +35,8 @@ const MainNav = () => {
             <Menu className="h-5 w-5" />
           </Button>
         </SheetTrigger>
-        <SheetContent side="left" className="w-[300px] glass-effect">
+        <SheetContent position="left" className="w-[300px] glass-effect">
+
           <nav className="flex flex-col gap-4">
             {navItems.map((item) => (
               <Link

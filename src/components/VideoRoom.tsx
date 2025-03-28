@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 
 import { Card } from "./lib/ui/card";
 
-import{ Mic, MicOff, Video, VideoOff, PhoneOff, Users, Copy, CheckCircle,
-  Link, Monitor, MonitorUp
+import{  Users, Copy, CheckCircle,
+  Link
 } from "lucide-react";
-import { Badge } from "./lib//ui/badge";
+import { Badge } from "./lib/ui/badge";
 import { toast } from "sonner";
 import { Input } from "./lib/ui/input";
 import { Button } from "./lib/ui/button";
