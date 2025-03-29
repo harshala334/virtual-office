@@ -1,9 +1,9 @@
-import { Button } from "./lib/ui/button";
+import { Button } from "../components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/lib/ui/card";
 
 import { Users, Video, Calendar, Clock, Star, Check } from "lucide-react";
 import { useState } from "react";
-import type { ConferenceRoom } from "@/types/room";
+import type { ConferenceRoom } from "../components/types/room";
 import { Badge } from "./lib/ui/badge";
 
 interface RoomCardProps {
